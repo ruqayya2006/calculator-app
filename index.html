@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator with History</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="calc">
+<input type="text" id="display" disabled>
+<div class="buttons">
+<button class="clear" onclick="clearAll()">C</button>
+<button class="num" onclick="del()">DEL</button>
+<button class="op" onclick="append('%')">%</button>
+<button class="op" onclick="append('/')">÷</button>
+
+<button class="num" onclick="append('7')">7</button>
+<button class="num" onclick="append('8')">8</button>
+<button class="num" onclick="append('9')">9</button>
+<button class="op" onclick="append('*')">×</button>
+
+<button class="num" onclick="append('4')">4</button>
+<button class="num" onclick="append('5')">5</button>
+<button class="num" onclick="append('6')">6</button>
+<button class="op" onclick="append('-')">−</button>
+
+<button class="num" onclick="append('1')">1</button>
+<button class="num" onclick="append('2')">2</button>
+<button class="num" onclick="append('3')">3</button>
+<button class="op" onclick="append('+')">+</button>
+
+<button class="num" onclick="append('0')">0</button>
+<button class="num" onclick="append('.')">.</button>
+<button class="eq" style="grid-column: span 2;" onclick="calculate()">=</button>
+</div>
+</div>
+
+<div class="history">
+<h3>History</h3>
+<div id="histList"><p style="color:#475569;">No history yet</p></div>
+<button onclick="clearHist()" class="clear-hist-btn">Clear History</button>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
