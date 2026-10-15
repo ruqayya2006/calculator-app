@@ -8,7 +8,16 @@ function renderHist(){
 }
 renderHist();
 
-function append(v){ display.value += v; }
+function append(v){
+  let last = display.value.slice(-1);
+  let ops = ['+','-','*','/','%','.'];
+  // If last char and new char both are operators, replace last one
+  if(ops.includes(last) && ops.includes(v)){
+    display.value = display.value.slice(0,-1) + v;
+    return;
+  }
+  display.value += v;
+}
 function clearAll(){ display.value=''; }
 function del(){ display.value = display.value.slice(0,-1); }
 function calculate(){
